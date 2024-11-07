@@ -31,7 +31,7 @@ module.exports = {
                         body: "By-𝕶𝖎𝖓𝖌 𝕾𝖆𝖒",
                         thumbnailUrl: 'https://telegra.ph/file/dc9d3bdc97bb45d2d8a53.jpg',
                         thumbnail: { url: 'https://telegra.ph/file/dc9d3bdc97bb45d2d8a53.jpg' },
-                        sourceUrl: 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e',
+                        sourceUrl: 'https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P',
                         previewType: "VIDEO",
                         showAdAttribution: true,
                         mediaType: 1,
