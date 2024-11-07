@@ -1,12 +1,12 @@
  
 
-<h1 align="center">ꪶ𝙅𝙄𝙉𝙓-𝗩1ꫂ<br></h1>
+<h1 align="center">ꪶLEOPARD3ꫂ<br></h1>
 <p align="center">
 <img src=""/>
 </p>
 
 <p align="center">
-𝙅𝙄𝙉𝙓 𝘽𝙤𝙩 Multi Device is a whatsapp bot created by <a href="https://github.com/Samu-el1" target="_blank">Sam</a> using <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> and <a href="https://github.com/nodejs" target="_blank">Nodejs</a>. Dont forget to give a star bro.
+LEOPARD3 𝘽𝙤𝙩 Multi Device is a whatsapp bot created by <a href="https://github.com/Leopardibraah" target="_blank">ibraah</a> using <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> and <a href="https://github.com/nodejs" target="_blank">Nodejs</a>. Dont forget to give a star bro.
 </p>
 
 
@@ -15,14 +15,14 @@
 
 # ```Bot Info```
 <p align="center">
-<a href="https://github.com/Samue-l1/followers"><img title="Followers" src="https://img.shields.io/github/followers/Samue-l1?color=red&style=flat-square"></a>
-<a href="https://github.com/Samue-l1/Jinx/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Samue-l1/Classic-v3-BUG?color=blue&style=flat-square"></a>
-<a href="https://github.com/Samue-l1/Jinx/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Samue-l1/Jinx?color=red&style=flat-square"></a>
-<a href="https://github.com/Samue-l1/Jinx/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Samue-l1/Jinx?label=Watchers&color=blue&style=flat-square"></a>
-<a href="https://github.com/Samue-l1/Jinx"><img title="Open Source" src="https://img.shields.io/badge/Author-Classic%20Bot%20Inc.-red?v=103"></a>
-<a href="https://github.com/Samue-l1/Jinx/"><img title="Size" src="https://img.shields.io/github/repo-size/Samue-l1/Classic-v3-BUG?style=flat-square&color=green"></a>
+<a href="https://github.com/Leoaprdibraah/followers"><img title="Followers" src="https://img.shields.io/github/followers/Leopardibraah?color=red&style=flat-square"></a>
+<a href="https://github.com/Leopardibraah/LEOAPRD3/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Leopardibraah/LEOPARD3?color=blue&style=flat-square"></a>
+<a href="https://github.com/Leopardibraah/LEOAPRD3/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Leopardibraah/LEOPARD3?color=red&style=flat-square"></a>
+<a href="https://github.com/Leopardibraah/LEOAPRD3/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Leopardibraah/LEOPARD3?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/Leopardibraah/LEOAPRD3"><img title="Open Source" src="https://img.shields.io/badge/Author-LEOPARD%20Bot%20Inc.-red?v=103"></a>
+<a href="https://github.com/Leopardibraah/LEOAPRD3/"><img title="Size" src="https://img.shields.io/github/repo-size/Leopardibraah/LEOPARD3?style=flat-square&color=green"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Samue-l1%2FJinx&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-<a href="https://github.com/Samue-l1/Jinx/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
+<a href="https://github.com/Leopardibraah/LEOAPRD3/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
 <p align='center'>
     </p>
@@ -37,14 +37,14 @@
 
 ## ```Bot Support Group Chats```
 
-- [`GC`](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV)
-- [`Channel`](https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e)
+- [`GC`](https://chat.whatsapp.com/EJD2l284bYh3qIsrmycqT4)
+- [`Channel`](https://whatsapp.com/channel/0029Vabz7vUJ3jutx2fNsf2P)
 
 
 
 # Setup For Deployment 👇
 
-- FORK THE REPOSITORY [`Here`](https://github.com/Samue-l1/Jinx/fork)
+- FORK THE REPOSITORY [`Here`](https://github.com/Leopardibraah/LEOAPRD3/fork)
 
 ## `Generate Pair Code For Session`
 
@@ -62,11 +62,11 @@ heroku/nodejs
 https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
 https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ```
-*Add your Creds.json to Classic file
+*Add your Creds.json to SESSION
 * Create a new app at [Heroku](heroku.com)
 * Add Build packs
 * Connect your heroku with your github
-* Locate Classic-v3-BUG
+* Locate LEOPARD3
 * Now deploy.
 * Start the Worker
 * Enjoy the Bot.
@@ -95,8 +95,8 @@ pkg install nodejs -y
 pkg install ffmpeg -y 
 pkg install wget
 pkg install imagemagick -y
-git clone https://github.com/Samue-l1/Classic-v3-BUG
-cd Classic-v3-BUG
+git clone https://github.com/Leopardibraah/LEOAPRD3
+cd LEOPARD3
 yarn install
 npm start
 ```
@@ -108,7 +108,7 @@ apt apt install ffmpeg
 apt apt install libwebp 
 apt apt install imagrmagick
 apt install bash
-git clone https://github.com/Samue-l1/Classic-v3-BUG 
+git clone https://github.com/Leopardibraah/LEOAPRD3 
 cd Classic-v3-BUG
 npm start
 ```
