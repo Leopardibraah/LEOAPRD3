@@ -7,7 +7,7 @@ module.exports = {
         const { sam, m, q, prefix, command, reaction, reply } = context;
 
         if (!q) {
-            await p0reply(`Add input, Example: *${prefix + command} King Sam*`);
+            await p0reply(`Add input, Example: *${prefix + command} Ibraah leo*`);
             await reaction(m.chat, "❗");
             return;
         }
